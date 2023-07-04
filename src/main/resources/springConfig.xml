@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean class="org.example.Car" id="car" init-method="init">
+        <constructor-arg name="model" type="java.lang.String" value="${car.model}"/>
+        <constructor-arg name="color" type="java.lang.String" value="${car.color}"/>
+        <constructor-arg name="power" type="java.lang.Integer" value="${car.power}"/>
+    </bean>
+
+    <bean class="org.example.Bike" id="bike">
+        <constructor-arg name="model" type="java.lang.String" value="${bike.model}"/>
+        <constructor-arg name="color" type="java.lang.String" value="${bike.color}"/>
+        <constructor-arg name="power" value="${bike.power}"/>
+    </bean>
+
+    <bean class="org.example.Truck" id="truck">
+        <constructor-arg name="model" type="java.lang.String" value="${truck.model}"/>
+        <constructor-arg name="color" type="java.lang.String" value="${truck.color}"/>
+        <constructor-arg name="power" value="${truck.power}"/>
+    </bean>
+
+    <bean class="org.example.Cat" id="cat" init-method="voice">
+        <constructor-arg name="name" type="java.lang.String" value="${cat.name}"/>
+        <constructor-arg name="color" type="java.lang.String" value="${cat.color}"/>
+        <constructor-arg name="age" value="${cat.age}"/>
+    </bean>
+
+    <bean class="org.example.Dog" id="dog" init-method="voice">
+        <constructor-arg name="name" type="java.lang.String" value="${dog.name}"/>
+        <constructor-arg name="color" type="java.lang.String" value="${dog.color}"/>
+        <constructor-arg name="age" value="${dog.age}"/>
+        <constructor-arg name="isHome" value="${dog.isHome}"/>
+    </bean>
+
+    <bean class="org.example.Smartphone" id="phone" init-method="switchOn">
+        <constructor-arg name="model" type="java.lang.String" value="${phone.model}"/>
+        <constructor-arg name="os" type="java.lang.String" value="${phone.os}"/>
+        <constructor-arg name="ram" value="${phone.ram}"/>
+        <constructor-arg name="memory" value="${phone.memory}"/>
+        <constructor-arg name="isOled" value="${phone.isOled}"/>
+    </bean>
+
+    <bean class="org.example.Laptop" id="laptop" init-method="turnOn">
+        <constructor-arg name="model" type="java.lang.String" value="${laptop.model}"/>
+        <constructor-arg name="color" type="java.lang.String" value="${laptop.color}"/>
+        <constructor-arg name="ram" value="${laptop.ram}"/>
+        <constructor-arg name="ssd" value="${laptop.ssd}"/>
+        <constructor-arg name="isIps" value="${laptop.isIps}"/>
+    </bean>
+
+    <bean class="org.example.Computer" id="computer" init-method="startComp">
+        <constructor-arg name="model" type="java.lang.String" value="${computer.model}"/>
+        <constructor-arg name="processorModel" type="java.lang.String" value="${computer.processorModel}"/>
+        <constructor-arg name="ram" value="${computer.ram}"/>
+        <constructor-arg name="ssd" value="${computer.ssd}"/>
+    </bean>
+</beans>
